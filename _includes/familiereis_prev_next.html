@@ -1,0 +1,46 @@
+{%- comment -%}
+  Vorige/volgende-navigatie voor kwartierstaten.
+  Loopt door site.data.familiereis (de vaste reisvolgorde), houdt de
+  vorige slug bij, en pakt de volgende slug na het vinden van page.url.
+  Lookt vervolgens de titels op uit site.pages.
+{%- endcomment -%}
+
+{%- assign prev_slug = nil -%}
+{%- assign next_slug = nil -%}
+{%- assign found = false -%}
+{%- for entry in site.data.familiereis -%}
+  {%- assign entry_url = '/familiereis/' | append: entry.slug | append: '/' -%}
+  {%- if found and next_slug == nil and entry_url != page.url -%}
+    {%- assign next_slug = entry.slug -%}
+  {%- endif -%}
+  {%- if entry_url == page.url -%}
+    {%- assign found = true -%}
+  {%- elsif found == false -%}
+    {%- assign prev_slug = entry.slug -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if found and prev_slug or next_slug -%}
+<nav class="familiereis-prev-next" aria-label="Door de familiereis">
+  {%- if prev_slug -%}
+    {%- assign prev_url = '/familiereis/' | append: prev_slug | append: '/' -%}
+    {%- assign prev_page = site.pages | where: 'url', prev_url | first -%}
+    {%- if prev_page -%}
+  <a class="familiereis-prev" href="{{ prev_url | relative_url }}">
+    <span class="dir">&larr; Vorige</span>
+    <span class="name">{{ prev_page.title }}</span>
+  </a>
+    {%- endif -%}
+  {%- endif -%}
+  {%- if next_slug -%}
+    {%- assign next_url = '/familiereis/' | append: next_slug | append: '/' -%}
+    {%- assign next_page = site.pages | where: 'url', next_url | first -%}
+    {%- if next_page -%}
+  <a class="familiereis-next" href="{{ next_url | relative_url }}">
+    <span class="dir">Volgende &rarr;</span>
+    <span class="name">{{ next_page.title }}</span>
+  </a>
+    {%- endif -%}
+  {%- endif -%}
+</nav>
+{%- endif -%}

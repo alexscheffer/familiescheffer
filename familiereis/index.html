@@ -27,18 +27,23 @@ permalink: /familiereis/
 
   <section class="section">
     <h2>Kwartierstaten</h2>
-    {%- assign entries = site.pages
-        | where_exp: "p", "p.url contains '/familiereis/'"
-        | where_exp: "p", "p.url != '/familiereis/'"
-        | sort: "title" -%}
-    {% if entries.size > 0 %}
+    <p>De reis loopt chronologisch &mdash; van Arjan&rsquo;s ouders terug door de
+    Scheffer-lijn, over naar de Brussen-lijn aan Alex&rsquo; kant, en zo weer
+    omhoog naar nu. Op elke kwartierstaat staan onderaan &ldquo;vorige&rdquo;- en
+    &ldquo;volgende&rdquo;-knoppen om die reis stap voor stap te doorlopen.</p>
+
+    {%- if site.data.familiereis -%}
       <ul class="familiereis-lijst">
-        {% for entry in entries %}
-          <li><a href="{{ entry.url | relative_url }}">{{ entry.title }}</a></li>
-        {% endfor %}
+        {%- for entry in site.data.familiereis -%}
+          {%- assign entry_url = '/familiereis/' | append: entry.slug | append: '/' -%}
+          {%- assign entry_page = site.pages | where: 'url', entry_url | first -%}
+          {%- if entry_page -%}
+            <li><a href="{{ entry_url | relative_url }}">{{ entry_page.title }}</a></li>
+          {%- endif -%}
+        {%- endfor -%}
       </ul>
-    {% else %}
+    {%- else -%}
       <p><em>Nog geen kwartierstaten gepubliceerd op deze nieuwe site &mdash; volgt.</em></p>
-    {% endif %}
+    {%- endif -%}
   </section>
 </main>

@@ -309,6 +309,44 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
 }
 .familiereis-nav a:hover { color: var(--terra); }
 
+/* Vorige/volgende-knoppen voor de chronologische reis door de kwartierstaten.
+   Volgt de volgorde uit _data/familiereis.yml, ingevoegd door de layout. */
+.familiereis-prev-next {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-top: 1px solid var(--line);
+  padding: 1.8rem 0 0;
+  margin: 2.5rem 0 clamp(2.5rem, 6vw, 4rem);
+}
+.familiereis-prev-next a {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-width: 48%;
+  text-decoration: none;
+  color: var(--ink);
+}
+.familiereis-prev-next a:hover { color: var(--terra); }
+.familiereis-prev-next .dir {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  font-weight: 600;
+}
+.familiereis-prev-next .name {
+  font-family: var(--display);
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+.familiereis-prev-next .familiereis-next {
+  margin-left: auto;
+  text-align: right;
+}
+
 /* =========================================================
    LAAD-ANIMATIE  (subtiele, getrapte fade-up)
    ========================================================= */

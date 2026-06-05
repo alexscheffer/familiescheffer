@@ -16,6 +16,9 @@
 
   <div class="flow">
     {{ content }}
+    {%- if page.url contains '/familiereis/' and page.url != '/familiereis/' -%}
+      <div class="wrap">{% include familiereis_prev_next.html %}</div>
+    {%- endif -%}
   </div>
 
   {% include footer.html %}
