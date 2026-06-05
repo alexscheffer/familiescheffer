@@ -15,3 +15,4 @@ _site/
 
 # Lokale projectcontext voor Claude — niet in publieke repo
 CLAUDE.md
+.claude/
