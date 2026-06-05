@@ -355,6 +355,53 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
 }
 
 /* =========================================================
+   DOG SUMMARY  (overzichts-blokken op /honden/)
+   Foto links, naam + intro + "Lees meer" rechts.
+   Op mobiel stapelen ze; op desktop staan ze naast elkaar.
+   ========================================================= */
+.dog-summary-inner {
+  display: grid;
+  grid-template-columns: minmax(140px, 200px) 1fr;
+  gap: clamp(1.2rem, 3vw, 2rem);
+  align-items: start;
+  margin-top: 0.6rem;
+}
+.dog-summary-photo {
+  margin: 0;
+}
+.dog-summary-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 0.5rem;
+  border-radius: 2px;
+  box-shadow: 0 6px 14px -8px rgba(49, 63, 42, 0.4);
+  transform: rotate(-1.2deg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.dog-summary:nth-of-type(even) .dog-summary-photo img {
+  transform: rotate(1deg);
+}
+.dog-summary-photo img:hover {
+  transform: rotate(0deg) scale(1.03);
+  box-shadow: 0 14px 26px -10px rgba(49, 63, 42, 0.5);
+}
+.dog-summary-text p { margin: 0 0 0.8rem; max-width: 56ch; }
+.dog-summary-text p:last-child { margin-bottom: 0; }
+
+@media (max-width: 540px) {
+  .dog-summary-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .dog-summary-photo { width: 60%; max-width: 220px; }
+  .dog-summary-text { text-align: left; width: 100%; }
+}
+
+/* =========================================================
    PHOTO WALL  (foto's op /alex/ en /arjan/)
    Polaroid-stijl: witte rand, lichte schaduw, kleine rotatie per
    kaartje. Hover trekt 'm recht en licht 'm op.
