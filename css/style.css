@@ -155,8 +155,25 @@ a:hover { color: var(--terra); }
    HERO  (alleen op de homepagina)
    ========================================================= */
 .hero {
-  padding: clamp(3rem, 9vw, 7rem) 0 clamp(2.5rem, 6vw, 4.5rem);
+  position: relative;
+  width: 100%;
+  /* Foto over de volle breedte, met een zachte parkament-overlay zodat de
+     warme palet-kleuren doorlopen en de donkere tekst leesbaar blijft. */
+  background-image:
+    linear-gradient(to bottom,
+      rgba(246, 241, 231, 0.55) 0%,
+      rgba(246, 241, 231, 0.35) 45%,
+      rgba(246, 241, 231, 0.78) 100%),
+    url('/images/site/profielfotos/header.jpg');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  padding: clamp(3.5rem, 10vw, 7rem) 0 clamp(3rem, 7vw, 5rem);
+  min-height: clamp(320px, 48vw, 560px);
+  display: flex;
+  align-items: center;
 }
+.hero-inner { position: relative; z-index: 1; }
 .hero .eyebrow {
   font-size: 0.8rem;
   letter-spacing: 0.22em;
@@ -164,6 +181,7 @@ a:hover { color: var(--terra); }
   color: var(--terra);
   margin: 0 0 1rem;
   font-weight: 600;
+  text-shadow: 0 1px 2px rgba(246, 241, 231, 0.6);
 }
 .hero h1 {
   font-family: var(--display);
@@ -172,13 +190,15 @@ a:hover { color: var(--terra); }
   line-height: 1.02;
   letter-spacing: -0.01em;
   margin: 0 0 1.2rem;
+  text-shadow: 0 1px 3px rgba(246, 241, 231, 0.55);
 }
 .hero h1 .amp { color: var(--terra); font-style: italic; }
 .hero .lead {
   font-size: clamp(1.1rem, 2.4vw, 1.35rem);
-  color: var(--ink-soft);
+  color: var(--ink);
   max-width: 38ch;
   margin: 0;
+  text-shadow: 0 1px 2px rgba(246, 241, 231, 0.65);
 }
 
 /* =========================================================
