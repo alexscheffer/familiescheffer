@@ -244,6 +244,72 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
 .flow { flex: 1 0 auto; }
 
 /* =========================================================
+   FAMILIEREIS  (overzichtspagina + kwartierstaten)
+   ========================================================= */
+.familiereis-lijst {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.familiereis-lijst li { margin: 0; }
+.familiereis-lijst li + li {
+  border-top: 1px solid var(--line);
+}
+.familiereis-lijst a {
+  display: block;
+  padding: 0.8rem 0;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 500;
+}
+.familiereis-lijst a:hover { color: var(--terra); }
+
+/* De kwartierstaat-tabel komt uit de oude site, met al zijn eigen kolom-
+   indeling. We laten de structuur intact en geven hem alleen leesbare
+   typografie + horizontale scroll op mobiel. */
+.kwartierstaat {
+  overflow-x: auto;
+  margin: 0 0 1.5rem;
+}
+.kwartierstaat table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 540px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.kwartierstaat td {
+  padding: 0.45rem 0.7rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.kwartierstaat tr:first-child td {
+  background: var(--paper-deep);
+  font-family: var(--display);
+}
+.kwartierstaat b { font-weight: 600; }
+.kwartierstaat u { text-decoration: none; border-bottom: 1px dotted var(--ink-soft); }
+
+/* Onderaan elke kwartierstaat: "naar Alex" / "naar Arjan"-navigatie. */
+.familiereis-nav {
+  list-style: none;
+  padding: 1.5rem 0 0;
+  margin: 2rem 0 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem 2rem;
+  justify-content: space-between;
+}
+.familiereis-nav li { margin: 0; }
+.familiereis-nav a {
+  text-decoration: none;
+  color: var(--green-deep);
+  font-weight: 500;
+}
+.familiereis-nav a:hover { color: var(--terra); }
+
+/* =========================================================
    LAAD-ANIMATIE  (subtiele, getrapte fade-up)
    ========================================================= */
 @media (prefers-reduced-motion: no-preference) {
