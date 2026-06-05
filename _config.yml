@@ -7,18 +7,15 @@ description: "De familiewebsite van Arjan en Alex Scheffer-Koster uit de Achterh
 lang: nl
 
 # baseurl: pad waarop de site draait, *onder* het hostnaam-niveau.
-# Tijdens testen op GitHub Pages serveert github de repo op
-#   https://<gebruiker>.github.io/familiescheffer/
-# dus alle interne paden moeten met /familiescheffer/ beginnen, anders gaan
-# CSS en navigatielinks 404. Daarom: baseurl: "/familiescheffer".
+# Eigen domein familiescheffer.nl is gekoppeld via CNAME, dus de site draait
+# op de root van dat domein. Daarom: baseurl: "".
 #
-# Zodra het eigen domein familiescheffer.nl gekoppeld is (CNAME + DNS), draait
-# de site op de root van dat domein. Zet baseurl dan terug op "":
-#   baseurl: ""
-# Dat is de enige regel die hoeft te veranderen — alle links gebruiken al
-# relative_url / link-filter, die nemen baseurl automatisch mee.
-baseurl: "/familiescheffer"
-url: ""
+# Wil je tijdelijk testen op de github.io-test-URL <gebruiker>.github.io/<repo>/?
+# Dan moet baseurl terug naar "/<repo>", anders gaan CSS- en navigatielinks 404.
+# Alle interne links gebruiken het relative_url / link-filter, die nemen
+# baseurl automatisch mee — dus deze ene regel is genoeg.
+baseurl: ""
+url: "https://familiescheffer.nl"
 
 # Niet meenemen in de gebouwde site.
 exclude:
