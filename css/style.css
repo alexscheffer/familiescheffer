@@ -276,6 +276,37 @@ main { padding-bottom: clamp(3rem, 8vw, 6rem); }
 .card p { margin: 0; color: var(--ink-soft); font-size: 0.97rem; }
 .card .arrow { color: var(--terra); font-weight: 700; }
 
+/* --- Kaartjes met portretfoto als doorschijnende achtergrond.
+   Zelfde idee als de hero op /: parkament-overlay zorgt dat de
+   donkere tekst leesbaar blijft. */
+.card--photo {
+  background-color: var(--paper-deep);
+  background-size: cover;
+  background-position: center 28%;
+  background-repeat: no-repeat;
+  min-height: 180px;
+}
+.card--photo h3,
+.card--photo p {
+  text-shadow: 0 1px 2px rgba(246, 241, 231, 0.75);
+}
+.card--arjan {
+  background-image:
+    linear-gradient(to bottom,
+      rgba(239, 231, 214, 0.62) 0%,
+      rgba(239, 231, 214, 0.42) 38%,
+      rgba(239, 231, 214, 0.82) 100%),
+    url('/images/site/profielfotos/arjan3.jpg');
+}
+.card--alex {
+  background-image:
+    linear-gradient(to bottom,
+      rgba(239, 231, 214, 0.62) 0%,
+      rgba(239, 231, 214, 0.42) 38%,
+      rgba(239, 231, 214, 0.82) 100%),
+    url('/images/site/profielfotos/alex3.jpg');
+}
+
 /* =========================================================
    FOOTER  (dunne groene strook, zelfde hoogte als topbar)
    ========================================================= */
