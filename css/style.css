@@ -308,6 +308,53 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
 .flow { flex: 1 0 auto; }
 
 /* =========================================================
+   PULL QUOTE  (citaat-blok, bv. tussen secties op de homepage)
+   ========================================================= */
+.pull-quote {
+  margin: clamp(2rem, 5vw, 3.5rem) auto 0;
+  max-width: 36rem;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.pull-quote a {
+  display: block;
+  padding: clamp(1.8rem, 5vw, 3rem) clamp(1rem, 3vw, 2rem);
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.pull-quote a:hover,
+.pull-quote a:focus { color: var(--terra); }
+.pull-quote blockquote {
+  margin: 0;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.35rem, 3.4vw, 2rem);
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+}
+.pull-quote blockquote::before {
+  content: "\201C";  /* curly opening quote */
+  display: block;
+  font-size: 2.6em;
+  line-height: 0.55;
+  font-style: normal;
+  color: var(--terra);
+  opacity: 0.55;
+  margin-bottom: 0.4rem;
+}
+.pull-quote figcaption {
+  margin-top: 1.1rem;
+  font-family: var(--body);
+  font-style: normal;
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+
+/* =========================================================
    PHOTO WALL  (foto's op /alex/ en /arjan/)
    Polaroid-stijl: witte rand, lichte schaduw, kleine rotatie per
    kaartje. Hover trekt 'm recht en licht 'm op.
