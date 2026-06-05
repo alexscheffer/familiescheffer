@@ -1,0 +1,24 @@
+# familiescheffer.nl — Jekyll-configuratie
+# Minimaal: titel, taal, baseurl. Geen plugins buiten wat GitHub Pages
+# standaard ondersteunt.
+
+title: "Arjan & Alex Scheffer-Koster"
+description: "De familiewebsite van Arjan en Alex Scheffer-Koster uit de Achterhoek."
+lang: nl
+
+# baseurl: leeg.
+# De site draait uiteindelijk op het eigen domein (familiescheffer.nl) in de
+# root, dus daar hoort baseurl: "" bij. Alle interne links gebruiken het
+# `relative_url` / `link`-filter, dus ze blijven kloppen.
+# Wil je testen op de GitHub-test-URL <gebruiker>.github.io/familiescheffer/?
+# Override dan tijdelijk met:  bundle exec jekyll serve --baseurl /familiescheffer
+baseurl: ""
+url: ""
+
+# Niet meenemen in de gebouwde site.
+exclude:
+  - README.md
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

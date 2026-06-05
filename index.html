@@ -1,107 +1,62 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Arjan &amp; Alex Scheffer-Koster</title>
-  <meta name="description" content="De familiewebsite van Arjan en Alex Scheffer-Koster uit de Achterhoek.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+---
+layout: default
+title: Arjan & Alex Scheffer-Koster
+description: De familiewebsite van Arjan en Alex Scheffer-Koster uit de Achterhoek.
+---
 
-  <!-- ===== HEADER (identiek op elke pagina) ===== -->
-  <header class="site-header">
-    <a class="brand" href="index.html">A&amp;A</a>
-    <nav class="site-nav">
-      <a href="index.html">Gezin</a>
-      <a href="alex.html">Alex</a>
-      <a href="arjan.html">Arjan</a>
-    </nav>
-  </header>
+<!-- ===== HERO ===== -->
+<section class="hero wrap">
+  <p class="eyebrow reveal">Familie in de Achterhoek</p>
+  <h1 class="reveal">Arjan <span class="amp">&amp;</span> Alex<br>Scheffer-Koster</h1>
+  <p class="lead reveal">Twee mensen die genieten van de kleine dingen, de natuur om ons heen en het leven samen.</p>
+</section>
 
-  <div class="flow">
-    <!-- ===== HERO ===== -->
-    <section class="hero wrap">
-      <p class="eyebrow reveal">Familie in de Achterhoek</p>
-      <h1 class="reveal">Arjan <span class="amp">&amp;</span> Alex<br>Scheffer-Koster</h1>
-      <p class="lead reveal">Twee mensen die genieten van de kleine dingen, de natuur om ons heen en het leven samen.</p>
-    </section>
+<main class="wrap">
+  <!-- ===== KORTE INTRO ===== -->
+  <section class="section">
+    <p class="intro-lead reveal">
+      <!-- TODO: pas deze welkomsttekst aan naar wens -->
+      Welkom op onze plek op het web. Hier vertellen we kort wie we zijn,
+      waar we wonen en wat ons bezighoudt.
+    </p>
+  </section>
 
-    <main class="wrap">
-      <!-- ===== KORTE INTRO ===== -->
-      <section class="section">
-        <p class="intro-lead reveal">
-          <!-- TODO: pas deze welkomsttekst aan naar wens -->
-          Welkom op onze plek op het web. Hier vertellen we kort wie we zijn,
-          waar we wonen en wat ons bezighoudt.
-        </p>
-      </section>
-
-      <!-- ===== TEASERS naar de andere pagina's ===== -->
-      <section class="section">
-        <div class="cards">
-          <a class="card reveal" href="alex.html">
-            <h3>Alex</h3>
-            <p>Rustig, breed geïnteresseerd, gek op wandelen en fietsen in de natuur. <span class="arrow">&rarr;</span></p>
-          </a>
-          <a class="card reveal" href="arjan.html">
-            <h3>Arjan</h3>
-            <p>Vrolijk en gastvrij, met een zwak voor het seizoensgewijs inrichten van het huis. <span class="arrow">&rarr;</span></p>
-          </a>
-        </div>
-      </section>
-
-      <!-- ===== GEZIN-SECTIES (vul aan vanuit je checklist) ===== -->
-      <section class="section">
-        <h2>Waar wij wonen</h2>
-        <p>
-          <!-- TODO: tekst uit de oude "waar"-pagina over de Achterhoek -->
-          Een paar regels over de streek waar we wonen.
-        </p>
-      </section>
-
-      <section class="section">
-        <h2>Wat ons bezighoudt</h2>
-        <p>
-          <!-- TODO: tekst uit de oude "is"-pagina: hobby's en gezamenlijke interesses -->
-          Onze hobby's en interesses.
-        </p>
-      </section>
-
-      <section class="section">
-        <h2>Wat we nog willen</h2>
-        <p>
-          <!-- TODO: tekst uit de oude "komt"-pagina: bucketlist / toekomstplannen -->
-          Plannen voor de toekomst.
-        </p>
-      </section>
-    </main>
-  </div>
-
-  <!-- ===== FOOTER (identiek op elke pagina) ===== -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p class="footer-name">Scheffer-Koster &middot; Achterhoek</p>
-      <nav class="social">
-        <a href="https://www.facebook.com/arjanalex.schefferkoster" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.instagram.com/schefferkoster/?hl=nl" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.linkedin.com/in/alex-scheffer-koster/" target="_blank" rel="noopener">LinkedIn</a>
-        <!-- TODO: zet hieronder je eigen e-mailadres -->
-        <a href="mailto:info@familiescheffer.nl">E-mail</a>
-      </nav>
-      <p class="footer-meta">&copy; <span id="year"></span> familiescheffer.nl</p>
+  <!-- ===== TEASERS naar de andere pagina's ===== -->
+  <section class="section">
+    <div class="cards">
+      <a class="card reveal" href="{% link alex.html %}">
+        <h3>Alex</h3>
+        <p>Rustig, breed geïnteresseerd, gek op wandelen en fietsen in de natuur. <span class="arrow">&rarr;</span></p>
+      </a>
+      <a class="card reveal" href="{% link arjan.html %}">
+        <h3>Arjan</h3>
+        <p>Vrolijk en gastvrij, met een zwak voor het seizoensgewijs inrichten van het huis. <span class="arrow">&rarr;</span></p>
+      </a>
     </div>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-      var here = location.pathname.split('/').pop() || 'index.html';
-      document.querySelectorAll('.site-nav a').forEach(function (a) {
-        if (a.getAttribute('href') === here) a.setAttribute('aria-current', 'page');
-      });
-    </script>
-  </footer>
+  </section>
 
-</body>
-</html>
+  <!-- ===== GEZIN-SECTIES (vul aan vanuit je checklist) ===== -->
+  <section class="section">
+    <h2>Waar wij wonen</h2>
+    <p>
+      <!-- TODO: tekst uit de oude "waar"-pagina over de Achterhoek -->
+      Een paar regels over de streek waar we wonen.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Wat ons bezighoudt</h2>
+    <p>
+      <!-- TODO: tekst uit de oude "is"-pagina: hobby's en gezamenlijke interesses -->
+      Onze hobby's en interesses.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Wat we nog willen</h2>
+    <p>
+      <!-- TODO: tekst uit de oude "komt"-pagina: bucketlist / toekomstplannen -->
+      Plannen voor de toekomst.
+    </p>
+  </section>
+</main>

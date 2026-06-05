@@ -1,88 +1,45 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alex &mdash; Scheffer-Koster</title>
-  <meta name="description" content="Over Alex Scheffer-Koster.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+---
+layout: default
+title: "Alex — Scheffer-Koster"
+description: Over Alex Scheffer-Koster.
+permalink: /alex/
+---
 
-  <!-- ===== HEADER (identiek op elke pagina) ===== -->
-  <header class="site-header">
-    <a class="brand" href="index.html">A&amp;A</a>
-    <nav class="site-nav">
-      <a href="index.html">Gezin</a>
-      <a href="alex.html">Alex</a>
-      <a href="arjan.html">Arjan</a>
-    </nav>
+<div class="wrap">
+  <header class="page-head">
+    <p class="eyebrow reveal">Over</p>
+    <h1 class="reveal">Alex</h1>
   </header>
+</div>
 
-  <div class="flow">
-    <div class="wrap">
-      <header class="page-head">
-        <p class="eyebrow reveal">Over</p>
-        <h1 class="reveal">Alex</h1>
-      </header>
-    </div>
+<main class="wrap">
+  <!-- Echte introtekst van de huidige site -->
+  <section class="section">
+    <p class="intro-lead reveal">
+      Ik zou mijzelf willen omschrijven als een rustig persoon, met beide benen op de grond.
+      Het meest gelukkig als ik lekker met mijn gezin samen kan zijn. Ik heb een heel brede
+      interesse en blijf graag op de hoogte van het nieuws en de nieuwste ontwikkelingen op
+      het gebied van techniek en ICT. Ik mag graag wandelen en fietsen in de mooie natuur,
+      waarbij ik echt van kleine dingen kan genieten.
+    </p>
+  </section>
 
-    <main class="wrap">
-      <!-- Echte introtekst van de huidige site -->
-      <section class="section">
-        <p class="intro-lead reveal">
-          Ik zou mijzelf willen omschrijven als een rustig persoon, met beide benen op de grond.
-          Het meest gelukkig als ik lekker met mijn gezin samen kan zijn. Ik heb een heel brede
-          interesse en blijf graag op de hoogte van het nieuws en de nieuwste ontwikkelingen op
-          het gebied van techniek en ICT. Ik mag graag wandelen en fietsen in de mooie natuur,
-          waarbij ik echt van kleine dingen kan genieten.
-        </p>
-      </section>
+  <!-- ===== Onderdelen uit je checklist — houden of schrappen ===== -->
+  <section class="section">
+    <h2>Opleiding</h2>
+    <p><!-- TODO: tekst uit "Opleiding" -->Korte beschrijving.</p>
+  </section>
 
-      <!-- ===== Onderdelen uit je checklist — houden of schrappen ===== -->
-      <section class="section">
-        <h2>Opleiding</h2>
-        <p><!-- TODO: tekst uit "Opleiding" -->Korte beschrijving.</p>
-      </section>
+  <section class="section">
+    <h2>Werkervaring</h2>
+    <p><!-- TODO: tekst uit "Werkervaring" -->Korte beschrijving.</p>
+  </section>
 
-      <section class="section">
-        <h2>Werkervaring</h2>
-        <p><!-- TODO: tekst uit "Werkervaring" -->Korte beschrijving.</p>
-      </section>
+  <section class="section">
+    <h2>Vaardigheden</h2>
+    <p><!-- TODO: tekst uit "Vaardigheden" -->Korte beschrijving.</p>
+  </section>
 
-      <section class="section">
-        <h2>Vaardigheden</h2>
-        <p><!-- TODO: tekst uit "Vaardigheden" -->Korte beschrijving.</p>
-      </section>
-
-      <!-- TODO (optioneel): "Passie voor grensvlakken", "Ideale werkgever/werkplek" -
-           alleen meenemen als je de site een professionele/cv-toon wilt geven. -->
-    </main>
-  </div>
-
-  <!-- ===== FOOTER (identiek op elke pagina) ===== -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p class="footer-name">Scheffer-Koster &middot; Achterhoek</p>
-      <nav class="social">
-        <a href="https://www.facebook.com/arjanalex.schefferkoster" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.instagram.com/schefferkoster/?hl=nl" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.linkedin.com/in/alex-scheffer-koster/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:info@familiescheffer.nl">E-mail</a>
-      </nav>
-      <p class="footer-meta">&copy; <span id="year"></span> familiescheffer.nl</p>
-    </div>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-      var here = location.pathname.split('/').pop() || 'index.html';
-      document.querySelectorAll('.site-nav a').forEach(function (a) {
-        if (a.getAttribute('href') === here) a.setAttribute('aria-current', 'page');
-      });
-    </script>
-  </footer>
-
-</body>
-</html>
+  <!-- TODO (optioneel): "Passie voor grensvlakken", "Ideale werkgever/werkplek" -
+       alleen meenemen als je de site een professionele/cv-toon wilt geven. -->
+</main>

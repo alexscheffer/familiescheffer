@@ -8,7 +8,10 @@ Thumbs.db
 *.swp
 *.tmp
 
-# (later, mocht je Jekyll gaan gebruiken)
+# Jekyll-build
 _site/
 .jekyll-cache/
 .sass-cache/
+
+# Lokale projectcontext voor Claude — niet in publieke repo
+CLAUDE.md
