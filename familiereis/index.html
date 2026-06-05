@@ -1,0 +1,44 @@
+---
+layout: default
+title: Familiereis
+description: Op zoek naar de raakvlakken tussen de families van Arjan en Alex.
+permalink: /familiereis/
+---
+
+<div class="wrap">
+  <header class="page-head">
+    <p class="eyebrow reveal">Geweest</p>
+    <h1 class="reveal">Familiereis</h1>
+  </header>
+</div>
+
+<main class="wrap">
+  <section class="section">
+    <p class="intro-lead reveal">&ldquo;Als je lang doorpraat zijn we allemaal familie.&rdquo;</p>
+    <p>
+      Tegenwoordig is het vrij eenvoudig om een eind terug te gaan in je
+      familiegeschiedenis. Daarbij is het leuk om te ontdekken hoe je familie
+      verbonden is met die van een ander. Op een van die wonderlijke
+      familiereizen hebben we een voorouder ontdekt waar de families van Arjan
+      en Alex elkaar raken. Misschien zijn er nog wel meer raakvlakken. In deze
+      artikelen gaan we daar op in.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Kwartierstaten</h2>
+    {%- assign entries = site.pages
+        | where_exp: "p", "p.url contains '/familiereis/'"
+        | where_exp: "p", "p.url != '/familiereis/'"
+        | sort: "title" -%}
+    {% if entries.size > 0 %}
+      <ul class="familiereis-lijst">
+        {% for entry in entries %}
+          <li><a href="{{ entry.url | relative_url }}">{{ entry.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p><em>Nog geen kwartierstaten gepubliceerd op deze nieuwe site &mdash; volgt.</em></p>
+    {% endif %}
+  </section>
+</main>
