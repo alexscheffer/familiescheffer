@@ -6,13 +6,18 @@ title: "Arjan & Alex Scheffer-Koster"
 description: "De familiewebsite van Arjan en Alex Scheffer-Koster uit de Achterhoek."
 lang: nl
 
-# baseurl: leeg.
-# De site draait uiteindelijk op het eigen domein (familiescheffer.nl) in de
-# root, dus daar hoort baseurl: "" bij. Alle interne links gebruiken het
-# `relative_url` / `link`-filter, dus ze blijven kloppen.
-# Wil je testen op de GitHub-test-URL <gebruiker>.github.io/familiescheffer/?
-# Override dan tijdelijk met:  bundle exec jekyll serve --baseurl /familiescheffer
-baseurl: ""
+# baseurl: pad waarop de site draait, *onder* het hostnaam-niveau.
+# Tijdens testen op GitHub Pages serveert github de repo op
+#   https://<gebruiker>.github.io/familiescheffer/
+# dus alle interne paden moeten met /familiescheffer/ beginnen, anders gaan
+# CSS en navigatielinks 404. Daarom: baseurl: "/familiescheffer".
+#
+# Zodra het eigen domein familiescheffer.nl gekoppeld is (CNAME + DNS), draait
+# de site op de root van dat domein. Zet baseurl dan terug op "":
+#   baseurl: ""
+# Dat is de enige regel die hoeft te veranderen — alle links gebruiken al
+# relative_url / link-filter, die nemen baseurl automatisch mee.
+baseurl: "/familiescheffer"
 url: ""
 
 # Niet meenemen in de gebouwde site.
