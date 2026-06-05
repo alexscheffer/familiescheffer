@@ -1,0 +1,14 @@
+# OS-rommel
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*.tmp
+
+# (later, mocht je Jekyll gaan gebruiken)
+_site/
+.jekyll-cache/
+.sass-cache/
