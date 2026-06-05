@@ -288,6 +288,50 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
 .flow { flex: 1 0 auto; }
 
 /* =========================================================
+   PHOTO WALL  (foto's op /alex/ en /arjan/)
+   Polaroid-stijl: witte rand, lichte schaduw, kleine rotatie per
+   kaartje. Hover trekt 'm recht en licht 'm op.
+   ========================================================= */
+.photo-wall {
+  list-style: none;
+  padding: 0;
+  margin: clamp(1rem, 3vw, 1.6rem) 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: clamp(1rem, 3vw, 1.6rem);
+}
+.photo-wall li {
+  margin: 0;
+  background: #fff;
+  padding: 0.55rem 0.55rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  box-shadow: 0 6px 14px -8px rgba(49, 63, 42, 0.4);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+/* Lichte rotatie per kaartje, met een paar varianten zodat het rijtje speels blijft. */
+.photo-wall li:nth-child(3n+1) { transform: rotate(-1.6deg); }
+.photo-wall li:nth-child(3n+2) { transform: rotate(1.2deg); }
+.photo-wall li:nth-child(3n+3) { transform: rotate(-0.5deg); }
+.photo-wall li:hover,
+.photo-wall li:focus-within {
+  transform: rotate(0deg) translateY(-4px) scale(1.04);
+  box-shadow: 0 16px 30px -12px rgba(49, 63, 42, 0.5);
+  z-index: 2;
+}
+.photo-wall img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 1px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-wall li { transition: none; }
+  .photo-wall li:hover { transform: none; }
+}
+
+/* =========================================================
    FAMILIEREIS  (overzichtspagina + kwartierstaten)
    ========================================================= */
 .familiereis-lijst {
