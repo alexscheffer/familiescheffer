@@ -1,0 +1,12 @@
+# Security-contact voor familiescheffer.nl
+# Opgesteld volgens RFC 9116 — zie https://securitytxt.org/
+
+# Contact via een URL (geen e-mailadres, dus niets te scrapen voor spammers).
+Contact: https://www.linkedin.com/in/alex-scheffer-koster/
+
+# Vervaldatum (VERPLICHT). Na deze datum is het bestand ongeldig.
+# Zet 'm hooguit ~1 jaar vooruit en werk 'm rond die tijd bij.
+Expires: 2027-07-01T00:00:00.000Z
+
+Preferred-Languages: nl, en
+Canonical: https://familiescheffer.nl/.well-known/security.txt
