@@ -17,7 +17,10 @@ lang: nl
 baseurl: ""
 url: "https://familiescheffer.nl"
 
+include:
+  - .well-known
 # Niet meenemen in de gebouwde site.
+
 exclude:
   - README.md
   - CLAUDE.md
